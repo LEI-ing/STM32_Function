@@ -18,7 +18,7 @@ void TIM_General_Init(TIM_TypeDef *TIM, uint8_t time_ms, FunctionalState IT_Stat
         RCC_APB1Periph_TIM5,
         RCC_APB1Periph_TIM6,
         RCC_APB1Periph_TIM7};
-    uint8_t NVIC_IRQChannel[] = {
+    uint8_t NVIC_IRQChannels[] = {
         TIM2_IRQn,
         TIM3_IRQn,
         TIM4_IRQn};
@@ -45,7 +45,7 @@ void TIM_General_Init(TIM_TypeDef *TIM, uint8_t time_ms, FunctionalState IT_Stat
 
     if (IT_State == ENABLE) {
         NVIC_InitTypeDef NVIC_InitTypeDefStruct;
-        NVIC_InitTypeDefStruct.NVIC_IRQChannel                   = NVIC_IRQChannel[i];
+        NVIC_InitTypeDefStruct.NVIC_IRQChannel                   = NVIC_IRQChannels[i];
         NVIC_InitTypeDefStruct.NVIC_IRQChannelCmd                = ENABLE;
         NVIC_InitTypeDefStruct.NVIC_IRQChannelPreemptionPriority = PreemptionPriority;
         NVIC_InitTypeDefStruct.NVIC_IRQChannelSubPriority        = SubPriority;

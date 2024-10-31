@@ -8,6 +8,6 @@ typedef struct
     uint16_t GPIO_Pin_RX;
 } USART_gpioInitTypeDef;
 
-void MyUSART_Init(USART_TypeDef *USARTx, USART_gpioInitTypeDef *USART_gpioStructure, uint32_t BaudRate, FunctionalState USART_ITstate);
+void MyUSART_Init(USART_TypeDef *USARTx, USART_gpioInitTypeDef *USART_gpioStructure, uint32_t BaudRate, FunctionalState USART_ITstate, uint8_t PreemptionPriority, uint8_t SubPriority);
 
 #endif
